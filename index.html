@@ -1,180 +1,191 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lyh - 个人主页</title>
+    <title>Your Name - Personal Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* 全局样式 */
-        body {
-            font-family: 'Arial', sans-serif;
+        /* Global Styles */
+        body, html {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
+            background: #1e1e2f;
+            color: #fff;
+            scroll-behavior: smooth;
         }
         a {
-            color: #333;
+            color: #1e90ff;
             text-decoration: none;
+            transition: color 0.3s;
         }
         a:hover {
-            color: #007BFF;
+            color: #ff7e5f;
         }
-        /* 头部样式 */
+        /* Header Styles */
         header {
-            background: #007BFF;
-            color: #fff;
-            padding: 2rem 0;
+            position: relative;
+            height: 100vh;
+            background: url('your-background-image.jpg') no-repeat center center/cover;
             text-align: center;
+            color: #fff;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
         }
         header h1 {
-            margin: 0;
-            font-size: 2.5rem;
+            position: relative;
+            font-size: 4rem;
+            margin-top: 20vh;
+            animation: fadeInDown 1.5s ease;
         }
         header p {
-            margin: 0.5rem 0 0;
-            font-size: 1.2rem;
+            position: relative;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            animation: fadeInUp 1.5s ease;
         }
-        /* 导航样式 */
+        /* Navigation Styles */
         nav {
-            background: #333;
-            color: #fff;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
             display: flex;
             justify-content: center;
             padding: 0.5rem 0;
+            z-index: 1000;
         }
         nav a {
             color: #fff;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.5rem;
             margin: 0 0.5rem;
+            transition: background 0.3s, transform 0.3s;
         }
         nav a:hover {
-            background: #007BFF;
+            background: #1e90ff;
             border-radius: 5px;
+            transform: scale(1.1);
         }
-        /* 主体样式 */
+        /* Main Content Styles */
         .container {
-            width: 80%;
+            width: 85%;
             margin: 2rem auto;
             overflow: hidden;
         }
         section {
-            background: #fff;
-            padding: 2rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background: #2a2a3b;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(0,0,0,0.7);
         }
         section h2 {
             margin-top: 0;
-            border-bottom: 2px solid #007BFF;
+            border-bottom: 3px solid #1e90ff;
             padding-bottom: 0.5rem;
+            font-size: 2.5rem;
         }
-        /* 技能样式 */
+        /* Skills Styles */
         .skills {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
         }
         .skill {
-            background: #007BFF;
+            background: linear-gradient(45deg, #1e90ff, #ff7e5f);
             color: #fff;
-            padding: 0.5rem 1rem;
+            padding: 0.7rem 1.5rem;
             margin: 0.5rem;
-            border-radius: 5px;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        /* 项目样式 */
-        .projects {
+        .skill:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 126, 95, 0.7);
+        }
+        /* Course Reports Styles */
+        .reports {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
         }
-        .project {
-            background: #fff;
+        .report {
+            background: #2a2a3b;
             width: 48%;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .project h3 {
+        .report:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .report h3 {
             margin-top: 0;
+            font-size: 1.5rem;
         }
-        /* 页脚样式 */
+        /* Footer Styles */
         footer {
             text-align: center;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
             background: #333;
             color: #fff;
         }
-        /* 响应式设计 */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .projects {
+            .reports {
                 flex-direction: column;
             }
-            .project {
+            .report {
                 width: 100%;
+            }
+        }
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>lyh</h1>
-        <p>小菜鸟</p>
+        <h1>Your Name</h1>
+        <p>Your Profession or Title</p>
     </header>
     <nav>
-        <a href="#about">关于我</a>
-        <a href="#skills">技能</a>
-        <a href="#projects">项目</a>
-        <a href="#contact">联系我</a>
-    </nav>
-    <div class="container">
-        <section id="about">
-            <h2>关于我</h2>
-            <p>暂无</p>
-        </section>
-        <section id="skills">
-            <h2>技能</h2>
-            <div class="skills">
-                <div class="skill">HTML5</div>
-                <div class="skill">CSS3</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">React</div>
-                <div class="skill">Node.js</div>
-                <div class="skill">Python</div>
-                <!-- 添加更多技能 -->
-            </div>
-        </section>
-        <section id="projects">
-            <h2>项目</h2>
-            <div class="projects">
-                <div class="project">
-                    <h3>项目名称 1</h3>
-                    <p>项目描述。简要介绍项目的功能和您在其中的角色。</p>
-                    <a href="#">查看项目</a>
-                </div>
-                <div class="project">
-                    <h3>项目名称 2</h3>
-                    <p>项目描述。简要介绍项目的功能和您在其中的角色。</p>
-                    <a href="#">查看项目</a>
-                </div>
-                <!-- 添加更多项目 -->
-            </div>
-        </section>
-        <section id="contact">
-            <h2>联系我</h2>
-            <p>您可以通过以下方式与我联系：</p>
-            <ul>
-                <li><i class="fas fa-envelope"></i> 邮箱：18384888625@163.com</li>
-                <li><i class="fas fa-phone"></i> 电话：</li>
-                <!-- 添加更多联系方式 -->
-            </ul>
-        </section>
-    </div>
-    <footer>
-        <p>&copy; 2025 lyh 保留所有权利。</p>
-    </footer>
-</body>
-</html>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#reports">Course Reports</a>
+        <a href="#contact">Contact Me</a>
