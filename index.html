@@ -1,11 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>cole</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>您的姓名 - 个人主页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #007BFF;
+        }
+        /* 头部样式 */
+        header {
+            background: #007BFF;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+        }
+        /* 导航样式 */
+        nav {
+            background: #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+        }
+        nav a:hover {
+            background: #007BFF;
+            border-radius: 5px;
+        }
+        /* 主体样式 */
+        .container {
+            width: 80%;
+            margin: 2rem auto;
+            overflow: hidden;
+        }
+        section {
+            background: #fff;
+            padding: 2rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        section h2 {
+            margin-top: 0;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 0.5rem;
+        }
+        /* 技能样式 */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .skill {
+            background: #007BFF;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 5px;
+        }
+        /* 项目样式 */
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .project {
+            background: #fff;
+            width: 48%;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .project h3 {
+            margin-top: 0;
+        }
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: #fff;
+        }
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .projects {
+                flex-direction: column;
+            }
+            .project {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>cole's homepage</h1>
-  <h1>hello~</h1>
+    <header>
+        <h1>您的姓名</h1>
+        <p>您的职业或头衔</p>
+    </header>
+    <nav>
+        <a href="#about">关于我</a>
+        <a href="#skills">技能</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系我</a>
+    </nav>
+    <div class="container">
+        <section id="about">
+            <h2>关于我</h2>
+            <p>在这里写一段关于您的简介，介绍您的背景、经验和兴趣。</p>
+        </section>
+        <section id="skills">
+            <h2>技能</h2>
+            <div class="skills">
+                <div class="skill">HTML5</div>
+                <div class="skill">CSS3</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">React</div>
+                <div class="skill">Node.js</div>
+                <div class="skill">Python</div>
+                <!-- 添加更多技能 -->
+            </div>
+        </section>
+        <section id="projects">
+            <h2>项目</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>项目名称 1</h3>
+                    <p>项目描述。简要介绍项目的功能和您在其中的角色。</p>
+                    <a href="#">查看项目</a>
+                </div>
+                <div class="project">
+                    <h3>项目名称 2</h3>
+                    <p>项目描述。简要介绍项目的功能和您在其中的角色。</p>
+                    <a href="#">查看项目</a>
+                </div>
+                <!-- 添加更多项目 -->
+            </div>
+        </section>
+        <section id="contact">
+            <h2>联系我</h2>
+            <p>您可以通过以下方式与我联系：</p>
+            <ul>
+                <li><i class="fas fa-envelope"></i> 邮箱：your.email@example.com</li>
+                <li><i class="fas fa-phone"></i> 电话：+123 456 7890</li>
+                <li><i class="fab fa-linkedin"></i> LinkedIn：<a href="#">linkedin.com/in/yourprofile</a></li>
+                <!-- 添加更多联系方式 -->
+            </ul>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 您的姓名. 保留所有权利。</p>
+    </footer>
 </body>
 </html>
