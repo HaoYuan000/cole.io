@@ -1,191 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        /* Global Styles */
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background: #1e1e2f;
-            color: #fff;
-            scroll-behavior: smooth;
-        }
-        a {
-            color: #1e90ff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        a:hover {
-            color: #ff7e5f;
-        }
-        /* Header Styles */
-        header {
-            position: relative;
-            height: 100vh;
-            background: url('your-background-image.jpg') no-repeat center center/cover;
-            text-align: center;
-            color: #fff;
-        }
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
-        header h1 {
-            position: relative;
-            font-size: 4rem;
-            margin-top: 20vh;
-            animation: fadeInDown 1.5s ease;
-        }
-        header p {
-            position: relative;
-            font-size: 1.5rem;
-            margin-top: 1rem;
-            animation: fadeInUp 1.5s ease;
-        }
-        /* Navigation Styles */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            padding: 0.5rem 0;
-            z-index: 1000;
-        }
-        nav a {
-            color: #fff;
-            padding: 0.5rem 1.5rem;
-            margin: 0 0.5rem;
-            transition: background 0.3s, transform 0.3s;
-        }
-        nav a:hover {
-            background: #1e90ff;
-            border-radius: 5px;
-            transform: scale(1.1);
-        }
-        /* Main Content Styles */
-        .container {
-            width: 85%;
-            margin: 2rem auto;
-            overflow: hidden;
-        }
-        section {
-            background: #2a2a3b;
-            padding: 3rem;
-            margin-bottom: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        section:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 30px rgba(0,0,0,0.7);
-        }
-        section h2 {
-            margin-top: 0;
-            border-bottom: 3px solid #1e90ff;
-            padding-bottom: 0.5rem;
-            font-size: 2.5rem;
-        }
-        /* Skills Styles */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .skill {
-            background: linear-gradient(45deg, #1e90ff, #ff7e5f);
-            color: #fff;
-            padding: 0.7rem 1.5rem;
-            margin: 0.5rem;
-            border-radius: 20px;
-            font-size: 1.2rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .skill:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(255, 126, 95, 0.7);
-        }
-        /* Course Reports Styles */
-        .reports {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .report {
-            background: #2a2a3b;
-            width: 48%;
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .report:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        }
-        .report h3 {
-            margin-top: 0;
-            font-size: 1.5rem;
-        }
-        /* Footer Styles */
-        footer {
-            text-align: center;
-            padding: 1.5rem 0;
-            background: #333;
-            color: #fff;
-        }
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .reports {
-                flex-direction: column;
-            }
-            .report {
-                width: 100%;
-            }
-        }
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cole's Bioinformatics Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto:400&display=swap" rel="stylesheet" />
+  <!-- Font Awesome (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dyZb5VWjDkzX8m+z1dlkXmVl+n7nRyIhXxVBX/UvKVxN7d4h5pKvFEmXotDQF5n8d0sSTFwyc9kYvsfesqOKZg==" crossorigin="anonymous" />
+  <style>
+    /* Base styles and reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      background: #fff;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 0.5em;
+    }
+    p {
+      line-height: 1.6;
+      margin-bottom: 1em;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Header / Hero section */
+    header {
+      position: relative;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: #fff;
+      padding: 2em 1.5em;
+      padding-bottom: 4em;
+      text-align: center;
+      overflow: hidden;
+    }
+    header h1 {
+      font-size: 2.5em;
+      font-weight: 600;
+    }
+    header p.tagline {
+      font-size: 1.2em;
+      margin-top: 0.5em;
+      margin-bottom: 1.5em;
+    }
+    /* Elevate header content above decorative elements */
+    header h1, header p.tagline {
+      position: relative;
+      z-index: 2;
+    }
+    nav {
+      position: absolute;
+      top: 1em;
+      right: 1.5em;
+      z-index: 2;
+    }
+    nav ul {
+      list-style: none;
+    }
+    nav li {
+      display: inline-block;
+      margin-left: 1em;
+    }
+    nav a {
+      font-size: 0.95em;
+      color: #fff;
+      border-bottom: 2px solid transparent;
+      padding: 2px 0;
+    }
+    nav a:hover {
+      border-color: #fff;
+    }
+    /* Dark mode toggle button */
+    .dark-toggle {
+      background: none;
+      border: 2px solid #fff;
+      border-radius: 20px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.9em;
+      padding: 4px 8px;
+      margin-left: 1em;
+    }
+    .dark-toggle i {
+      pointer-events: none;
+    }
+    /* Decorative shapes in header */
+    header::before, header::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      z-index: 0;
+    }
+    header::before {
+      width: 100px;
+      height: 100px;
+      top: -30px;
+      right: -30px;
+    }
+    header::after {
+      width: 150px;
+      height: 150px;
+      bottom: -50px;
+      left: -50px;
+    }
+    /* Wave SVG at bottom of header */
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+    }
+    /* Sections */
+    section {
+      padding: 3em 1.5em;
+    }
+    section h2 {
+      font-size: 1.8em;
+      margin-bottom: 0.5em;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.2em;
+    }
+    section h2::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background: #6a11cb;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 5px;
+    }
+    /* About Section */
+    #about {
+      background: #fff;
+    }
+    #about p {
+      max-width: 800px;
+      margin: 0.5em auto;
+      font-size: 1em;
+    }
+    /* Skills Section */
+    #skills {
+      background: #f9f9f9;
+    }
+    .skills-container {
+      max-width: 800px;
+      margin: 1em auto;
+      text-align: center;
+    }
+    .skill-item {
+      display: inline-flex;
+      align-items: center;
+      background: #eee;
+      border-radius: 20px;
+      padding: 0.4em 0.8em;
+      margin: 0.4em;
+      font-size: 0.95em;
+      transition: all 0.3s ease;
+    }
+    .skill-item i {
+      margin-right: 0.5em;
+    }
+    .skill-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+    /* Course Reports Section */
+    #reports {
+      background: #fff;
+    }
+    .reports-container {
+      max-width: 900px;
+      margin: 1em auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5em;
+    }
+    .report-card {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 1em;
+      flex: 1 1 250px;
+      max-width: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+    .report-card h3 {
+      font-size: 1.1em;
+      margin-bottom: 0.5em;
+      color: #333;
+    }
+    .report-card p {
+      font-size: 0.9em;
+      line-height: 1.4;
+      margin-bottom: 0.5em;
+      color: #555;
+    }
+    .report-card a {
+      margin-top: auto;
+      font-size: 0.9em;
+      color: #2575fc;
+      text-decoration: underline;
+      align-self: flex-start;
+    }
+    .report-card a:hover {
+      color: #6a11cb;
+    }
+    .report-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    /* Contact Section */
+    #contact {
+      background: #f9f9f9;
+      text-align: center;
+    }
+    #contact p {
+      margin: 0.5em auto 2em auto;
+      max-width: 600px;
+      font-size: 1em;
+    }
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+    .contact-button {
+      display: inline-flex;
+      align-items: center;
+      background: #6a11cb;
+      color: #fff;
+      padding: 0.6em 1em;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.95em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contact-button i {
+      margin-right: 0.5em;
+      font-size: 1.1em;
+    }
+    .contact-button:hover {
+      background: #5a0ea5;
+    }
+    /* Specific contact button colors */
+    .contact-button.email { background: #D44638; }   /* Email (red) */
+    .contact-button.email:hover { background: #b33c30; }
+    .contact-button.github { background: #333; }
+    .contact-button.github:hover { background: #000; }
+    .contact-button.linkedin { background: #0077B5; }
+    .contact-button.linkedin:hover { background: #005f8e; }
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+      nav {
+        position: static;
+        margin-bottom: 1em;
+      }
+      nav li {
+        display: block;
+        margin: 0.5em 0;
+      }
+      .reports-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .report-card {
+        max-width: 100%;
+      }
+      .contact-buttons {
+        flex-direction: column;
+      }
+      .dark-toggle {
+        margin-left: 0;
+        display: block;
+        margin: 0.5em 0 0 0;
+      }
+    }
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background: #121212;
+      color: #ddd;
+    }
+    body.dark-mode header {
+      background: linear-gradient(135deg, #360b64 0%, #1b3c78 100%);
+      color: #fff;
+    }
+    body.dark-mode nav a, body.dark-mode .dark-toggle {
+      color: #fff;
+      border-color: #fff;
+    }
+    body.dark-mode section {
+      color: #ddd;
+    }
+    body.dark-mode #about {
+      background: #1e1e1e;
+    }
+    body.dark-mode #skills {
+      background: #2a2a2a;
+    }
+    body.dark-mode #reports {
+      background: #1e1e1e;
+    }
+    body.dark-mode #contact {
+      background: #2a2a2a;
+    }
+    body.dark-mode .skill-item {
+      background: #444;
+    }
+    body.dark-mode .report-card {
+      background: #333;
+      color: #ddd;
+    }
+    body.dark-mode .report-card h3 {
+      color: #fff;
+    }
+    body.dark-mode .report-card p {
+      color: #ccc;
+    }
+    body.dark-mode .report-card a {
+      color: #8cabff;
+    }
+    body.dark-mode .report-card a:hover {
+      color: #b6a8ff;
+    }
+    body.dark-mode .contact-button {
+      /* Keep contact button colors in dark mode, just adjust opacity on hover */
+      opacity: 0.9;
+    }
+    body.dark-mode .contact-button:hover {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Your Name</h1>
-        <p>Your Profession or Title</p>
-    </header>
+  <header>
     <nav>
-        <a href="#about">About Me</a>
-        <a href="#skills">Skills</a>
-        <a href="#reports">Course Reports</a>
-        <a href="#contact">Contact Me</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#reports">Course Reports</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="dark-toggle" id="darkToggleBtn" onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+    <h1>Hi, I'm Cole</h1>
+    <p class="tagline">A third-year Bioinformatics student passionate about data and discovery.</p>
+    <!-- Decorative wave at bottom of header -->
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,256 C480,320 960,192 1440,256 L1440,320 L0,320 Z"></path></svg>
+  </header>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Cole is a third-year Bioinformatics student at State University, pursuing a B.Sc. in Bioinformatics. With a strong foundation in biology and computer science, he enjoys merging these fields to glean new insights from complex biological data.</p>
+    <p>He has hands-on experience with genomic data analysis, algorithm development, and statistical modeling. Cole is particularly interested in genomics, computational biology, and machine learning applications in healthcare.</p>
+    <p>His goal is to contribute to scientific research by developing efficient computational tools and to pursue graduate studies in bioinformatics. Cole is also an active member of the Bioinformatics Club, where he collaborates on projects and shares knowledge with peers.</p>
+  </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-item"><i class="fab fa-python"></i>Python</div>
+      <div class="skill-item">R</div>
+      <div class="skill-item"><i class="fab fa-linux"></i>Linux/Unix</div>
+      <div class="skill-item"><i class="fab fa-git"></i>Git</div>
+      <div class="skill-item"><i class="fas fa-chart-line"></i>Data Analysis</div>
+      <div class="skill-item"><i class="fas fa-brain"></i>Machine Learning</div>
+      <div class="skill-item"><i class="fas fa-flask"></i>Bioinformatics</div>
+      <div class="skill-item"><i class="fas fa-database"></i>SQL Databases</div>
+    </div>
+  </section>
+  <section id="reports">
+    <h2>Course Reports</h2>
+    <div class="reports-container">
+      <div class="report-card">
+        <h3>Genome Sequencing Analysis</h3>
+        <p>Analyzed complete genome sequences of multiple <em>E. coli</em> strains to identify genetic variations associated with antibiotic resistance. Employed Python and bioinformatics pipelines to annotate and compare genomic features.</p>
+        <a href="#">Read more</a>
+      </div>
+      <div class="report-card">
+        <h3>Proteomics Data Visualization</h3>
+        <p>Developed interactive visualizations for protein expression data from a proteomics study. Using R and Python, created dashboards that highlight key patterns and anomalies in complex datasets for easier interpretation.</p>
+        <a href="#">Read more</a>
+      </div>
+      <div class="report-card">
+        <h3>Machine Learning in Genomics</h3>
+        <p>Applied machine learning models to gene expression data to predict disease-related patterns. Explored various algorithms (SVM, Random Forest, Neural Networks) to improve predictive accuracy in classifying sample phenotypes.</p>
+        <a href="#">Read more</a>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>I'd love to connect! Feel free to reach out to me via email or through my social profiles below.</p>
+    <div class="contact-buttons">
+      <a href="mailto:cole@example.com" class="contact-button email"><i class="fas fa-envelope"></i>Email</a>
+      <a href="#" class="contact-button linkedin"><i class="fab fa-linkedin"></i>LinkedIn</a>
+      <a href="#" class="contact-button github"><i class="fab fa-github"></i>GitHub</a>
+    </div>
+  </section>
+  <script>
+    function toggleDarkMode() {
+      const body = document.body;
+      const toggleBtnIcon = document.getElementById('darkToggleBtn').querySelector('i');
+      body.classList.toggle('dark-mode');
+      // Switch icon between moon and sun
+      if (body.classList.contains('dark-mode')) {
+        toggleBtnIcon.classList.remove('fa-moon');
+        toggleBtnIcon.classList.add('fa-sun');
+      } else {
+        toggleBtnIcon.classList.remove('fa-sun');
+        toggleBtnIcon.classList.add('fa-moon');
+      }
+    }
+  </script>
+</body>
+</html>
