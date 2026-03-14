@@ -229,6 +229,68 @@
       transform: translateY(-5px);
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
+    /* Projects Section */
+    #projects {
+      background: #f9f9f9;
+    }
+    .projects-container {
+      max-width: 900px;
+      margin: 1em auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5em;
+    }
+    .project-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5em;
+      flex: 1 1 350px;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      border-left: 4px solid #6a11cb;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+    .project-card h3 {
+      font-size: 1.2em;
+      margin-bottom: 0.4em;
+      color: #333;
+    }
+    .project-card .project-tags {
+      margin-bottom: 0.8em;
+    }
+    .project-tag {
+      display: inline-block;
+      background: #ede7f6;
+      color: #6a11cb;
+      border-radius: 12px;
+      padding: 0.2em 0.6em;
+      font-size: 0.8em;
+      margin-right: 0.4em;
+      margin-bottom: 0.3em;
+    }
+    .project-card p {
+      font-size: 0.95em;
+      line-height: 1.5;
+      color: #555;
+      flex-grow: 1;
+    }
+    .project-card a.project-link {
+      margin-top: 1em;
+      font-size: 0.9em;
+      color: #2575fc;
+      text-decoration: underline;
+      align-self: flex-start;
+    }
+    .project-card a.project-link:hover {
+      color: #6a11cb;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
     /* Contact Section */
     #contact {
       background: #f9f9f9;
@@ -325,6 +387,9 @@
     body.dark-mode #reports {
       background: #1e1e1e;
     }
+    body.dark-mode #projects {
+      background: #2a2a2a;
+    }
     body.dark-mode #contact {
       background: #2a2a2a;
     }
@@ -347,6 +412,27 @@
     body.dark-mode .report-card a:hover {
       color: #b6a8ff;
     }
+    body.dark-mode .project-card {
+      background: #333;
+      color: #ddd;
+      border-left-color: #9b59b6;
+    }
+    body.dark-mode .project-card h3 {
+      color: #fff;
+    }
+    body.dark-mode .project-card p {
+      color: #ccc;
+    }
+    body.dark-mode .project-tag {
+      background: #4a3060;
+      color: #c9a8f5;
+    }
+    body.dark-mode .project-card a.project-link {
+      color: #8cabff;
+    }
+    body.dark-mode .project-card a.project-link:hover {
+      color: #b6a8ff;
+    }
     body.dark-mode .contact-button {
       /* Keep contact button colors in dark mode, just adjust opacity on hover */
       opacity: 0.9;
@@ -362,6 +448,7 @@
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#reports">Course Reports</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -391,6 +478,21 @@
       <div class="skill-item"><i class="fas fa-brain"></i>Machine Learning</div>
       <div class="skill-item"><i class="fas fa-flask"></i>Bioinformatics</div>
       <div class="skill-item"><i class="fas fa-database"></i>SQL Databases</div>
+    </div>
+  </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>OpenClaw</h3>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Bioinformatics</span>
+          <span class="project-tag">Open Source</span>
+        </div>
+        <p>OpenClaw is an open-source bioinformatics toolkit designed to streamline the analysis of genomic and transcriptomic data. It provides a modular pipeline for sequence alignment, variant calling, and differential expression analysis, making it easier for researchers to process large-scale biological datasets with reproducible, well-documented workflows.</p>
+        <a href="https://github.com/HaoYuan000/OpenClaw" class="project-link"><i class="fab fa-github"></i> View on GitHub</a>
+      </div>
     </div>
   </section>
   <section id="reports">
