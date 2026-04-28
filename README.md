@@ -1,4 +1,3 @@
-# cole.github.io
 # 你好，我是 [yuanhao Li] 👋
 
 ![GitHub 个人主页访问量](https://komarev.com/ghpvc/?username=您的GitHub用户名&color=blue)
